@@ -1,93 +1,73 @@
 <!DOCTYPE html>
 <html lang="uk">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Звіти з лабораторних робіт</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            margin: 20px;
-        }
-        .header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .menu, .nav-tabs {
-            display: flex;
-            flex-direction: column;
-            margin-right: 20px;
-            border-right: 2px solid #000;
-            padding-right: 10px;
-        }
-        .menu a, .nav-tabs a {
-            display: block;
-            margin-bottom: 10px;
-            padding: 10px;
-            text-align: center;
-            background-color: #f0f0f0;
-            border: 1px solid #ccc;
-            text-decoration: none;
-            color: black;
-            cursor: pointer;
-        }
-        .menu a:hover, .nav-tabs a:hover {
-            background-color: #d3d3d3;
-        }
-        .nav-tabs {
-            flex-direction: row;
-            justify-content: space-around;
-            margin-bottom: 20px;
-        }
-        .student-info {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-    </style>
-</head>
-<body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="myCss.css">
+	<title>Лабораторні роботи</title>
+    
+  </head>
+  <body>
     <div class="header">
-        <h1>ЗВІТИ З ЛАБОРАТОРНИХ РОБІТ З ДИСЦИПЛІНИ «ІНТЕРНЕТ-ТЕХНОЛОГІЇ ТА ПРОЕКТУВАННЯ ВЕБ-ЗАСТОСУВАНЬ»</h1>
-        <p>Орієнтовний макет</p>
+      <h1>Інтернет-технології та проектування WEB-застосувань</h1>
+      <div>
+        <p>Студент: ІС-32 Кириченко Назар Сергійович</p>
+        <img src="image.png" alt="Фото студента" />
+      </div>
+    </div>
+
+    <div class="lab-buttons">
+      <a href="https://github.com/Nazarkyrychenko/IS-32_KYRYCHENKO-NAZAR_INDEPENDENT-1_" class="button " target="_blank">Самостійна робота №1 </a>
+      <a href="https://github.com/Nazarkyrychenko/IS-32_KYRYCHENKO-NAZAR_INDEPENDENT2" class="button" target="_blank">Самостійна робота №2</a>
+      <a href="https://github.com/Nazarkyrychenko/IS-32_KYRYCHENKO-NAZAR_lab1" class="button" target="_blank">Лабораторна робота №1</a>
+      <a href="https://github.com/Nazarkyrychenko/IS-32_KYRYCHENKO-NAZAR_lab1" class="button" target="_blank">Лабораторна робота №2</a>
+      <a href="lab3.html" class="button">Лабораторна робота №3</a>
+      <a href="lab4.html" class="button">Лабораторна робота №4</a>
+      <a href="lab5.html" class="button">Лабораторна робота №5</a>
+      <a href="lab6.html" class="button">Лабораторна робота №6</a>
+      <a href="lab7.html" class="button">Лабораторна робота №7</a>
+      <a href="lab8.html" class="button">Лабораторна робота №8</a>
+      <a href="lab9.html" class="button">Лабораторна робота №9</a>
     </div>
 
     <div class="container">
-        <div class="menu">
-            <a href="https://github.com/Nazarkyrychenko/IS-32_KYRYCHENKO-NAZAR_lab1.git">Лабораторна робота №1</a>
-            <a href="#">Лабораторна робота №2</a>
-            <a href="#">Лабораторна робота №3</a>
-			<a href="https://github.com/Nazarkyrychenko/IS-32_KYRYCHENKO-NAZAR_INDEPENDENT-1_.git">Самостійна робота №1</a>
-            <a href="BuisnessPlan.html">Опис предметного середовища</a>
-            <a href="#">Тема Мета Місце розташування лаби №1</a>
-            <a href="#">СТРУКТУРА ДОКУМЕНТА</a>
-            <a href="#">HTML-код ТАБЛИЦЬ</a>
-            <a href="#">HTML-код ФОРМИ</a>
-            <a href="#">HTML-код ЗОБРАЖЕННЯ</a>
-            <a href="#">ВИСНОВКИ</a>
-        </div>
+      <div class="left-menu">
+        <button onclick="loadContent('description.html')">
+          Опис предметного середовища
+        </button>
+        <button onclick="loadContent('structure.html')">
+          Структура документа
+        </button>
+        <button onclick="loadContent('table.html')">HTML-код таблиць</button>
+        <button onclick="loadContent('list.html')">HTML-код списку</button>
+        <button onclick="loadContent('form.html')">HTML-код форми</button>
+        <button onclick="loadContent('image.html')">HTML-код зображення</button>
+        <button onclick="loadContent('conclusion.html')">Висновки</button>
+      </div>
 
-        <div>
-            <div class="nav-tabs">
-                <a href="#">Лабораторна робота №4</a>
-                <a href="#">Лабораторна робота №5</a>
-                <a href="#">Лабораторна робота №6</a>
-                <a href="#">Лабораторна робота №7</a>
-                <a href="#">Лабораторна робота №8</a>
-                <a href="#">Лабораторна робота №9</a>
-            </div>
-
-            <div class="student-info">
-                <p>Студент групи ІС-32</p>
-                <p>Кириченко Назар Сергійович</p>
-                <a href="#" style="padding: 10px; background-color: #f0f0f0; border: 1px solid #ccc; text-decoration: none; color: black;">ФОТО СТУДЕНТА</a>
-            </div>
-        </div>
+      <div class="right-content" id="content">
+        <h2>Ласкаво просимо</h2>
+        <p>
+          Натисніть на одну з кнопок зліва або зверху, щоб побачити інформацію
+          про лабораторні роботи.
+        </p>
+      </div>
     </div>
- 
-</body>
+
+
+
+    <script>
+      function loadContent(filename) {
+        fetch(filename)
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("content").innerHTML = data;
+          })
+          .catch((error) => {
+            document.getElementById("content").innerHTML =
+              "Помилка завантаження.";
+          });
+      }
+    </script>
+  </body>
 </html>
