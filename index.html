@@ -17,57 +17,91 @@
     </div>
 
     <div class="lab-buttons">
-      <a href="https://github.com/Nazarkyrychenko/IS-32_KYRYCHENKO-NAZAR_INDEPENDENT-1_" class="button " target="_blank">Самостійна робота №1 </a>
-      <a href="https://github.com/Nazarkyrychenko/IS-32_KYRYCHENKO-NAZAR_INDEPENDENT2" class="button" target="_blank">Самостійна робота №2</a>
-      <a href="https://github.com/Nazarkyrychenko/IS-32_KYRYCHENKO-NAZAR_lab1" class="button" target="_blank">Лабораторна робота №1</a>
-      <a href="https://github.com/Nazarkyrychenko/IS-32_KYRYCHENKO-NAZAR_lab1" class="button" target="_blank">Лабораторна робота №2</a>
-      <a href="lab3.html" class="button">Лабораторна робота №3</a>
-      <a href="lab4.html" class="button">Лабораторна робота №4</a>
-      <a href="lab5.html" class="button">Лабораторна робота №5</a>
-      <a href="lab6.html" class="button">Лабораторна робота №6</a>
-      <a href="lab7.html" class="button">Лабораторна робота №7</a>
-      <a href="lab8.html" class="button">Лабораторна робота №8</a>
-      <a href="lab9.html" class="button">Лабораторна робота №9</a>
+	  <button class="button" onclick="showLabButtons(1)">Лабораторна робота №1</button>
+	  <button class="button" onclick="showLabButtons(2)">Лабораторна робота №2</button>
+      <button class="button" onclick="showLabButtons(3)">Лабораторна робота №3</button>
+      <button class="button" onclick="showLabButtons(4)">Лабораторна робота №4</button>
+      <button class="button" onclick="showLabButtons(5)">Лабораторна робота №5</button>
+      <button class="button" onclick="showLabButtons(6)">Лабораторна робота №6</button>
+      <button class="button" onclick="showLabButtons(7)">Лабораторна робота №7</button>
+      <button class="button" onclick="showLabButtons(8)">Лабораторна робота №8</button>
+      <button class="button" onclick="showLabButtons(9)">Лабораторна робота №9</button>
     </div>
 
     <div class="container">
-      <div class="left-menu">
-        <button onclick="loadContent('description.html')">
-          Опис предметного середовища
-        </button>
-        <button onclick="loadContent('structure.html')">
-          Структура документа
-        </button>
-        <button onclick="loadContent('table.html')">HTML-код таблиць</button>
-        <button onclick="loadContent('list.html')">HTML-код списку</button>
-        <button onclick="loadContent('form.html')">HTML-код форми</button>
-        <button onclick="loadContent('image.html')">HTML-код зображення</button>
-        <button onclick="loadContent('conclusion.html')">Висновки</button>
-      </div>
+		<div class="left-menu" id="dynamic-buttons">
+		  <!-- Кнопки будуть змінюватися динамічно -->
+		  <button onclick="loadContent('/lab1/lab1Description.html')">
+			Опис предметного середовища
+		  </button>
+		  <button onclick="loadContent('/lab1/lab1Structure.html')">
+			Структура документа
+		  </button>
+		  <button onclick="loadContent('/lab1/lab1Table.html')">HTML-код таблиць</button>
+		  <button onclick="loadContent('/lab1/lab1Lists.html')">HTML-код списку</button>
+		  <button onclick="loadContent('/lab1/lab1Form.html')">HTML-код форми</button>
+		  <button onclick="loadContent('/lab1/lab1Images.html')">HTML-код зображення</button>
+		  <button onclick="loadContent('/lab1/lab1Conclusion.html')">Висновки</button>
+		</div>
+  
+		<div class="right-content" id="content">
+		  <h2>Ласкаво просимо</h2>
+		  <p>
+			Натисніть на одну з кнопок зліва або зверху, щоб побачити інформацію
+			про лабораторні роботи.
+		  </p>
+		</div>
+	  </div>
+  
+	  <script>
+		// Функція для завантаження контенту у правий блок
+		function loadContent(filename) {
+		  fetch(filename)
+			.then((response) => response.text())
+			.then((data) => {
+			  document.getElementById("content").innerHTML = data;
+			})
+			.catch((error) => {
+			  document.getElementById("content").innerHTML =
+				"Помилка завантаження.";
+			});
+		}
+  
+		// Функція для заміни кнопок для конкретних лабораторних робіт
+		function showLabButtons(labNumber) {
+		  const buttonContainer = document.getElementById('dynamic-buttons');
+  
+		  if (labNumber === 1) {
+			buttonContainer.innerHTML = `
+			  <button onclick="loadContent('/lab1/lab1Description.html')">
+			Опис предметного середовища
+		  </button>
+		  <button onclick="loadContent('/lab1/lab1Structure.html')">
+			Структура документа
+		  </button>
+		  <button onclick="loadContent('/lab1/lab1Table.html')">HTML-код таблиць</button>
+		  <button onclick="loadContent('/lab1/lab1Lists.html')">HTML-код списку</button>
+		  <button onclick="loadContent('/lab1/lab1Form.html')">HTML-код форми</button>
+		  <button onclick="loadContent('/lab1/lab1Images.html')">HTML-код зображення</button>
+		  <button onclick="loadContent('/lab1/lab1Conclusion.html')">Висновки</button>
+			`;
+		  } else if (labNumber === 2) {
+			buttonContainer.innerHTML = `
+			  <button onclick="loadContent('/lab2/')">Тема Мета Місце розташування сайту, звіту</button>
+			  <button onclick="loadContent('/lab2/')">Способи підключення стилів</button>
+			  <button onclick="loadContent('/lab2/')">Селектори</button>
+			  <button onclick="loadContent('/lab2/')">Селектори тегу</button>
+			  <button onclick="loadContent('/lab2/')">Селектори класу</button>
+			  
+			  <button onclick="loadContent('/lab2/')">інші Селектори</button>
+			  <button onclick="loadContent('/lab2/')">Css шрифти Текст таблиці Фон Контур Списки Css: Просунутий</button>
+			  <button onclick="loadContent('/lab2/')">Висновки</button>
 
-      <div class="right-content" id="content">
-        <h2>Ласкаво просимо</h2>
-        <p>
-          Натисніть на одну з кнопок зліва або зверху, щоб побачити інформацію
-          про лабораторні роботи.
-        </p>
-      </div>
-    </div>
-
-
-
-    <script>
-      function loadContent(filename) {
-        fetch(filename)
-          .then((response) => response.text())
-          .then((data) => {
-            document.getElementById("content").innerHTML = data;
-          })
-          .catch((error) => {
-            document.getElementById("content").innerHTML =
-              "Помилка завантаження.";
-          });
-      }
-    </script>
-  </body>
-</html>
+			`;
+		  } else {
+			buttonContainer.innerHTML = `<p>Лабораторна робота №${labNumber} ще не підготовлена.</p>`;
+		  }
+		}
+	  </script>
+	</body>
+  </html>
