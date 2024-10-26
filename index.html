@@ -145,7 +145,18 @@
 				<button onclick="loadContent('./lab3/Conclusion.html')"> <span style="font-size: 20px"> <b> Висновки <b> </span></button>
 			`;
 
-		  } else {
+		 } else if (labNumber === 4) {
+
+			buttonContainer.innerHTML = `
+			
+			<button onclick="loadContent('./lab4/theme.html')"> <b> Тема Мета Місце розташування сайту <b> </button>
+			</button> 
+		
+			<button onclick="loadContent('./lab4/explanation.html')"> <b> Пояснення коду <b> </button>
+			</button> 
+		  `;
+
+		 }  else {
 			buttonContainer.innerHTML = `<p>Лабораторна робота №${labNumber} ще не підготовлена.</p>`;
 		  }
 		}
