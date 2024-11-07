@@ -156,9 +156,33 @@
 			</button> 
 		  `;
 
-		 }  else {
+		 } else if (labNumber === 5) {
+			buttonContainer.innerHTML = `
+			
+			<button onclick="loadContent('./lab5/description.html')"> <b> Тема Мета Місце розташування сайту <b> </button>
+			</button> 
+		
+			<button onclick="loadContent('./lab5/task1.html')"> <b>  ЗАВДАННЯ 1 <b> </button>
+			</button> 
+			
+			<button onclick="loadContent('./lab5/task2.html')"> <b>  ЗАВДАННЯ 2 <b> </button>
+			</button> 
+			
+			<button onclick="loadContent('./lab5/task3.html')"> <b>  ЗАВДАННЯ 3 <b> </button>
+			</button> 
+			
+			<button onclick="loadContent('./lab5/task4.html')"> <b>  ЗАВДАННЯ 4 <b> </button>
+			</button> 
+			
+			<button onclick="loadContent('./lab5/task5.html')"> <b>  ЗАВДАННЯ 5 <b> </button>
+			</button> 
+		  `;
+		 
+		}  else {
 			buttonContainer.innerHTML = `<p>Лабораторна робота №${labNumber} ще не підготовлена.</p>`;
 		  }
+		 
+		 
 		}
 	  </script>
 	</body>
