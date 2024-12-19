@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Завдання 5</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .taskTitle {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      #place {
+        width: 100px;
+        height: 150px;
+        background-color: green;
+      }
+      .container {
+        background-color: #90ee90;
+        padding: 20px;
+        border-radius: 8px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="taskTitle">ЗАВДАННЯ 5</div>
+      <div id="place"></div>
+    </div>
+
+    <script>
+      const placeDiv = document.getElementById("place");
+
+      window.addEventListener("click", (event) => {
+        if (event.target === placeDiv) {
+          alert('Клік у div з id="place"!');
+        } else {
+          alert('Клік поза div з id="place"!');
+        }
+      });
+    </script>
+  </body>
+</html>
