@@ -3,32 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Change Background Color</title>
+    <title>Document</title>
   </head>
   <body>
-    <div class="widget">
-      <p>Background color: <span class="color">-</span></p>
-      <button type="button" class="change-color">Change color</button>
-    </div>
-
-    <script>
-      function getRandomHexColor() {
-        return `#${Math.floor(Math.random() * 16777215)
-          .toString(16)
-          .padStart(6, 0)}`;
-      }
-
-      // Знаходимо елементи
-      const body = document.body;
-      const colorSpan = document.querySelector(".color");
-      const changeColorButton = document.querySelector(".change-color");
-
-      // Додаємо обробник події для кнопки
-      changeColorButton.addEventListener("click", () => {
-        const randomColor = getRandomHexColor(); // Генеруємо випадковий колір
-        body.style.backgroundColor = randomColor; // Змінюємо фон <body>
-        colorSpan.textContent = randomColor; // Вставляємо значення кольору в <span>
-      });
-    </script>
+    <img src="./lab7/imagesLab7/task9Code.png" alt="код до завдання 9" />
   </body>
 </html>
